@@ -93,3 +93,26 @@ Desired Output (Example):
   ]
  }
 ```
+This can be more simplified as; We have two sections: Required Columns and Table Relationships.
+
+**Table: `customer_0`**
+- Description: Stores detailed customer information and behavior.
+- Primary Key Column: customer_id
+- Columns:
+
+| Column Name | Description | Data Type | Format | PII Column | Nullable |
+|-------------|-------------|-----------|--------|------------|----------|
+| `customer_id` | Unique identifier for the customer | STRING | N/A | Yes | No |
+| `first_name` | Customer's first name | STRING | CamelCase | Yes | No |
+| `last_name` | Customer's last name | STRING | CamelCase | Yes | No |
+
+**Table: `order`**
+- Description: Stores detailed records of customer orders.
+- Primary Key Columns: order_id, order_item_id
+- Columns:
+
+| Column Name | Description | Data Type | Format | PII Column | Nullable |
+|-------------|-------------|-----------|--------|------------|----------|
+| `order_id` | Unique identifier for the order | STRING | N/A | No | No |
+| `customer_id` | Unique identifier for the customer | STRING | N/A | Yes | No |
+
