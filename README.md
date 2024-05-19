@@ -1,1 +1,95 @@
 # Atten
+Example Question 
+Give me the top 5 customers with the most number of orders.
+
+Desired Output (Example):
+```javascript
+ #RequiredColumns
+ {
+  "table_information": [
+    {
+      "table_name": "customer_0",
+      "table_description": "Stores detailed customer information and behavior",
+      "primary_key_column": [
+        "customer_id"
+      ],
+      "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "",
+            "is_nullable": "N"
+        },
+        {
+            "name": "first_name",
+            "description": "Customer's first name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group",
+            "is_nullable": "N"
+        },
+        {
+            "name": "last_name",
+            "description": "Customer's last name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group",
+            "is_nullable": "N"
+        }
+      ]
+    },
+    {
+      "table_name": "order",
+      "table_description": "Stores detailed records of customer orders",
+      "primary_key_column": [
+        "order_id",
+        "order_item_id"
+      ],
+      "columns": [
+                {
+            "name": "order_id",
+            "description": "Unique identifier for the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "is_nullable": "N"
+        },
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "is_nullable": "N"
+        }
+      ]
+    }
+  ]
+ }
+  
+ #TableRelationship
+ {
+  "relationships": [
+    {
+      "FromTable": "customer_0",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "order",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ]
+ }
+```
