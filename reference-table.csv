@@ -1,0 +1,270 @@
+﻿Stored in Table,Value Name,Value Description,Column Name 
+NEW,New,Order has been placed but not yet processed,Order Status
+PND,Pending,Order is awaiting further action,Order Status
+PRC,Processing,Order is being processed,Order Status
+PCK,Picked,Order items have been picked for shipping,Order Status
+PKD,Packed,Order has been packed,Order Status
+SHP,Shipped,Order has been shipped out from the warehouse,Order Status
+OOD,Out for Delivery,Order is out for delivery to the customer,Order Status
+DEL,Delivered,Order has been delivered to the customer,Order Status
+RTN,Returned,Order has been returned by the customer,Order Status
+CAN,Cancelled,Order has been cancelled,Order Status
+REF,Refunded,Payment has been refunded,Order Status
+HOL,On Hold,"Order is on hold, pending review or information",Order Status
+FLD,Failed,Order processing has failed,Order Status
+SP,Standard Shipping,Delivery within standard time frame,Shipping Method
+EX,Express Shipping,Faster delivery for an additional fee,Shipping Method
+FS,Free Shipping,"No shipping charge, conditions may apply",Shipping Method
+PS,Pickup in Store,Order can be picked up at a store location,Shipping Method
+OD,Overnight Delivery,Next day delivery,Shipping Method
+New York,New York,Major city in the US,city
+Los Angeles,Los Angeles,Major city in the US,city
+Chicago,Chicago,Major city in the US,city
+Houston,Houston,Major city in the US,city
+Phoenix,Phoenix,Major city in the US,city
+Philadelphia,Philadelphia,Major city in the US,city
+San Antonio,San Antonio,Major city in the US,city
+San Diego,San Diego,Major city in the US,city
+Dallas,Dallas,Major city in the US,city
+San Jose,San Jose,Major city in the US,city
+Austin,Austin,Major city in the US,city
+Jacksonville,Jacksonville,Major city in the US,city
+Fort Worth,Fort Worth,Major city in the US,city
+Columbus,Columbus,Major city in the US,city
+Indianapolis,Indianapolis,Major city in the US,city
+Charlotte,Charlotte,Major city in the US,city
+San Francisco,San Francisco,Major city in the US,city
+Seattle,Seattle,Major city in the US,city
+Denver,Denver,Major city in the US,city
+Washington D.C.,Washington D.C.,Major city in the US,city
+Nashville,Nashville,Major city in the US,city
+Oklahoma City,Oklahoma City,Major city in the US,city
+El Paso,El Paso,Major city in the US,city
+Boston,Boston,Major city in the US,city
+Portland,Portland,Major city in the US,city
+Las Vegas,Las Vegas,Major city in the US,city
+Detroit,Detroit,Major city in the US,city
+Memphis,Memphis,Major city in the US,city
+Louisville,Louisville,Major city in the US,city
+Baltimore,Baltimore,Major city in the US,city
+Milwaukee,Milwaukee,Major city in the US,city
+Albuquerque,Albuquerque,Major city in the US,city
+Tucson,Tucson,Major city in the US,city
+Fresno,Fresno,Major city in the US,city
+Sacramento,Sacramento,Major city in the US,city
+Kansas City,Kansas City,Major city in the US,city
+Mesa,Mesa,Major city in the US,city
+Atlanta,Atlanta,Major city in the US,city
+Omaha,Omaha,Major city in the US,city
+Colorado Springs,Colorado Springs,Major city in the US,city
+Raleigh,Raleigh,Major city in the US,city
+Long Beach,Long Beach,Major city in the US,city
+Virginia Beach,Virginia Beach,Major city in the US,city
+Miami,Miami,Major city in the US,city
+Oakland,Oakland,Major city in the US,city
+Minneapolis,Minneapolis,Major city in the US,city
+Tulsa,Tulsa,Major city in the US,city
+Arlington,Arlington,Major city in the US,city
+New Orleans,New Orleans,Major city in the US,city
+Wichita,Wichita,Major city in the US,city
+Cleveland,Cleveland,Major city in the US,city
+Tampa,Tampa,Major city in the US,city
+Bakersfield,Bakersfield,Major city in the US,city
+Aurora,Aurora,Major city in the US,city
+Germany,Germany,A major country in Europe,country
+France,France,A major country in Europe,country
+Italy,Italy,A major country in Europe,country
+Spain,Spain,A major country in Europe,country
+United Kingdom,United Kingdom,A major country in Europe,country
+Netherlands,Netherlands,A major country in Europe,country
+Belgium,Belgium,A major country in Europe,country
+Switzerland,Switzerland,A major country in Europe,country
+Poland,Poland,A major country in Europe,country
+Sweden,Sweden,A major country in Europe,country
+Norway,Norway,A major country in Europe,country
+Denmark,Denmark,A major country in Europe,country
+Finland,Finland,A major country in Europe,country
+Portugal,Portugal,A major country in Europe,country
+Austria,Austria,A major country in Europe,country
+Ireland,Ireland,A major country in Europe,country
+Czech Republic,Czech Republic,A major country in Europe,country
+Greece,Greece,A major country in Europe,country
+Hungary,Hungary,A major country in Europe,country
+Romania,Romania,A major country in Europe,country
+Bulgaria,Bulgaria,A major country in Europe,country
+Slovakia,Slovakia,A major country in Europe,country
+Lithuania,Lithuania,A major country in Europe,country
+Latvia,Latvia,A major country in Europe,country
+Estonia,Estonia,A major country in Europe,country
+Slovenia,Slovenia,A major country in Europe,country
+Croatia,Croatia,A major country in Europe,country
+Bosnia and Herzegovina,Bosnia and Herzegovina,A major country in Europe,country
+Serbia,Serbia,A major country in Europe,country
+Montenegro,Montenegro,A major country in Europe,country
+North Macedonia,North Macedonia,A major country in Europe,country
+Albania,Albania,A major country in Europe,country
+Kosovo,Kosovo,A major country in Europe,country
+Cyprus,Cyprus,A major country in Europe,country
+Malta,Malta,A major country in Europe,country
+Luxembourg,Luxembourg,A major country in Europe,country
+Monaco,Monaco,A major country in Europe,country
+Liechtenstein,Liechtenstein,A major country in Europe,country
+Iceland,Iceland,A major country in Europe,country
+Andorra,Andorra,A major country in Europe,country
+San Marino,San Marino,A major country in Europe,country
+Vatican City,Vatican City,A major country in Europe,country
+London,London,Major city in the United Kingdom,city
+Paris,Paris,Major city in France,city
+Berlin,Berlin,Major city in Germany,city
+Madrid,Madrid,Major city in Spain,city
+Rome,Rome,Major city in Italy,city
+Amsterdam,Amsterdam,Major city in the Netherlands,city
+Prague,Prague,Major city in Czech Republic,city
+Vienna,Vienna,Major city in Austria,city
+Budapest,Budapest,Major city in Hungary,city
+Barcelona,Barcelona,Major city in Spain,city
+Munich,Munich,Major city in Germany,city
+Lisbon,Lisbon,Major city in Portugal,city
+Brussels,Brussels,Major city in Belgium,city
+Stockholm,Stockholm,Major city in Sweden,city
+Copenhagen,Copenhagen,Major city in Denmark,city
+Dublin,Dublin,Major city in Ireland,city
+Athens,Athens,Major city in Greece,city
+Oslo,Oslo,Major city in Norway,city
+Helsinki,Helsinki,Major city in Finland,city
+Zurich,Zurich,Major city in Switzerland,city
+Warsaw,Warsaw,Major city in Poland,city
+Istanbul,Istanbul,Major city in Turkey,city
+Moscow,Moscow,Major city in Russia,city
+Saint Petersburg,Saint Petersburg,Major city in Russia,city
+Milan,Milan,Major city in Italy,city
+Edinburgh,Edinburgh,Major city in the United Kingdom,city
+Venice,Venice,Major city in Italy,city
+Frankfurt,Frankfurt,Major city in Germany,city
+Geneva,Geneva,Major city in Switzerland,city
+Florence,Florence,Major city in Italy,city
+Nice,Nice,Major city in France,city
+Lyon,Lyon,Major city in France,city
+Krakow,Krakow,Major city in Poland,city
+Valencia,Valencia,Major city in Spain,city
+Seville,Seville,Major city in Spain,city
+Porto,Porto,Major city in Portugal,city
+Naples,Naples,Major city in Italy,city
+Luxembourg,Luxembourg,Major city in Luxembourg,city
+Reykjavik,Reykjavik,Major city in Iceland,city
+Sofia,Sofia,Major city in Bulgaria,city
+Bucharest,Bucharest,Major city in Romania,city
+Belgrade,Belgrade,Major city in Serbia,city
+Budapest,Budapest,Major city in Hungary,city
+Riga,Riga,Major city in Latvia,city
+Tallinn,Tallinn,Major city in Estonia,city
+Vilnius,Vilnius,Major city in Lithuania,city
+USA,United States,Major country in North America,country
+Brazil,Brazil,Major country in South America,country
+China,China,Major country in Asia,country
+India,India,Major country in Asia,country
+Russia,Russia,Major country in Europe and Asia,country
+Germany,Germany,Major country in Europe,country
+Australia,Australia,Major country in Australia/Oceania,country
+South Africa,South Africa,Major country in Africa,country
+Egypt,Egypt,Major country in Africa,country
+Nigeria,Nigeria,Major country in Africa,country
+Saudi Arabia,Saudi Arabia,Major country in Asia,country
+Japan,Japan,Major country in Asia,country
+Mexico,Mexico,Major country in North America,country
+Canada,Canada,Major country in North America,country
+Argentina,Argentina,Major country in South America,country
+Colombia,Colombia,Major country in South America,country
+Indonesia,Indonesia,Major country in Asia,country
+France,France,Major country in Europe,country
+United Kingdom,United Kingdom,Major country in Europe,country
+Italy,Italy,Major country in Europe,country
+PM_CC,Credit Card,Payments made via credit card,payment_type
+PM_DC,Debit Card,Payments made via debit card,payment_type
+PM_PP,PayPal,Payments made via PayPal,payment_type
+PM_BNPL,Buy Now Pay Later,Deferred payment option,payment_type
+PM_WT,Wire Transfer,Payments made via wire transfer,payment_type
+PM_COD,Cash on Delivery,Payment made at the time of delivery,payment_type
+SM_STD,Standard Shipping,Delivery within standard time frame,shipping_type
+SM_EXP,Express Shipping,Faster delivery for an additional fee,shipping_type
+SM_FRS,Free Shipping,"No shipping charge, conditions may apply",shipping_type
+SM_INT,International Shipping,Delivery to international destinations,shipping_type
+SM_LCL,Local Pickup,Pickup from a local store or depot,shipping_type
+SM_DRS,Drone Shipping,"Delivery via drone, where available",shipping_type
+XS,Extra Small,Smallest standard size,size
+S,Small,Small size,size
+M,Medium,"Medium size, often standard",size
+L,Large,Large size,size
+XL,Extra Large,Larger than standard size,size
+XXL,Double XL,Very large size,size
+XXXL,Triple XL,Extraordinarily large size,size
+Red,Red,A vibrant primary color,color
+Blue,Blue,A calming primary color,color
+Green,Green,A refreshing primary color,color
+Black,Black,A classic and versatile color,color
+White,White,A pure and simple color,color
+Yellow,Yellow,A bright and cheerful color,color
+Purple,Purple,A regal and mysterious color,color
+Orange,Orange,A bold and energetic color,color
+Grey,Grey,A neutral and flexible color,color
+Brown,Brown,A warm and natural color,color
+Pink,Pink,A playful and romantic color,color
+Navy,Navy,A deep and professional color,color
+Mon,Monday,First day of the work week,day_of_week
+Tue,Tuesday,Second day of the work week,day_of_week
+Wed,Wednesday,Midweek day,day_of_week
+Thu,Thursday,Fourth day of the work week,day_of_week
+Fri,Friday,Last day of the work week,day_of_week
+Sat,Saturday,First day of the weekend,day_of_week
+Sun,Sunday,Second day of the weekend,day_of_week
+New Years Day,New Year's Day,Celebrates the first day of the new year (January 1),holiday
+MLK Day,Martin Luther King Jr. Day,Honors civil rights leader Martin Luther King Jr. (Third Monday in January),holiday
+Presidents Day,Presidents' Day,Honors all U.S. presidents (Third Monday in February),holiday
+Memorial Day,Memorial Day,Honors military personnel who died in service (Last Monday in May),holiday
+Independence Day,Independence Day,Celebrates the declaration of independence (July 4),holiday
+Labor Day,Labor Day,Honors the labor movement (First Monday in September),holiday
+Columbus Day,Columbus Day,Commemorates Christopher Columbus' landing (Second Monday in October),holiday
+Veterans Day,Veterans Day,Honors military veterans (November 11),holiday
+Thanksgiving,Thanksgiving,Celebrates giving thanks and harvest (Fourth Thursday in November),holiday
+Black Friday,Black Friday,Major retail sales day following Thanksgiving (Friday after Thanksgiving),holiday
+Cyber Monday,Cyber Monday,Online shopping deals following Thanksgiving weekend (Monday after Thanksgiving),holiday
+Christmas Day,Christmas Day,Celebrates the birth of Jesus Christ (December 25),holiday
+Halloween,Halloween,Celebration involving costumes and candies (October 31),holiday
+Valentines Day,Valentine's Day,Celebration of romance and love (February 14),holiday
+Easter,Easter,"Celebrates the Christian belief in the resurrection of Jesus Christ (Date varies, first Sunday after the first full moon following the March equinox)",holiday
+St Patricks Day,St. Patrick's Day,Celebrates Irish culture and the patron saint of Ireland (March 17),holiday
+Earth Day,Earth Day,Promotes environmental protection (April 22),holiday
+Active,Active,Customer actively engaging and making purchases,status
+Inactive,Inactive,Customer has not engaged or made purchases recently,status
+Prospect,Prospect,Potential customer not yet making purchases,status
+Churned,Churned,Customer who has stopped using services,status
+Loyalty Member,Loyalty Member,Customer who is part of the loyalty program,status
+VIP,VIP,High-value customer with benefits and rewards,status
+At Risk,At Risk,Customer at risk of becoming inactive or churning,status
+New,New,Newly acquired customer,status
+Returning,Returning,Customer who has resumed activity after a period of inactivity,status
+M,Male,Identifies a male individual,gender
+F,Female,Identifies a female individual,gender
+NB,Non-Binary,Identifies a non-binary individual,gender
+PNTS,Prefer Not to Say,Customer prefers not to specify gender,gender
+O,Other,Any other gender not listed above,gender
+Gold,Gold,Highest tier in the loyalty program,program_type
+Silver,Silver,Middle tier in the loyalty program,program_type
+Bronze,Bronze,Entry-level tier in the loyalty program,program_type
+Platinum,Platinum,"Exclusive tier above Gold, often by invite",program_type
+Basic,Basic,Basic access with minimal benefits,program_type
+Active,Active,Membership is currently active and in good standing,membership_status
+Inactive,Inactive,"Membership is currently inactive, no ongoing transactions",membership_status
+Suspended,Suspended,Membership is temporarily suspended due to various reasons,membership_status
+Cancelled,Cancelled,Membership has been cancelled by the user or the provider,membership_status
+Expired,Expired,Membership has expired and has not been renewed,membership_status
+Pending,Pending,Membership application is under review or awaiting further action,membership_status
+High Value,High Value,Customers with high purchase frequency and high spending,customer_segment
+Mid Value,Mid Value,Customers with moderate purchase frequency and spending,customer_segment
+Low Value,Low Value,Customers with low purchase frequency and spending,customer_segment
+Premium,Premium,Customers who consistently make large purchases,customer_segment
+Loyal,Loyal,Customers who have been with the business for a long time,customer_segment
+New,New,Recently acquired customers,customer_segment
+At Risk,At Risk,Customers who may churn due to low engagement or satisfaction,customer_segment
+Discount Seeker,Discount Seeker,Customers primarily motivated by promotions and discounts,customer_segment
+VIP,VIP,"Customers recognized for exceptional loyalty and spending, often receiving exclusive perks",customer_segment
