@@ -1,0 +1,584 @@
+{
+  "product_recommendation": [
+    {
+      "FromTable": "product_recommendation",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "customer_interaction_fact": [
+    {
+      "FromTable": "customer_interaction_fact",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "customer_search_1": [
+    {
+      "FromTable": "customer_search_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "customer_service_fact": [
+    {
+      "FromTable": "customer_service_fact",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "customer_support_0": [
+    {
+      "FromTable": "customer_support_0",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "product_category_pricing": [
+    {
+      "FromTable": "product_category_pricing",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "loyalty_program_1": [
+    {
+      "FromTable": "loyalty_program_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "sales_fact": [
+    {
+      "FromTable": "sales_fact",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "sales_fact",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "sales_transaction": [
+    {
+      "FromTable": "sales_transaction",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "sales_transaction",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "supply_chain_fact": [
+    {
+      "FromTable": "supply_chain_fact",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    },
+    {
+      "FromTable": "supply_chain_fact",
+      "FromColumn": [
+        "order_id"
+      ],
+      "ToTable": "order",
+      "ToColumn": [
+        "order_id"
+      ]
+    }
+  ],
+  "customer_address_history_0": [
+    {
+      "FromTable": "customer_address_history_0",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "order_details": [
+    {
+      "FromTable": "order_details",
+      "FromColumn": [
+        "order_id"
+      ],
+      "ToTable": "order",
+      "ToColumn": [
+        "order_id"
+      ]
+    },
+    {
+      "FromTable": "order_details",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    },
+    {
+      "FromTable": "order_details",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "order_fulfillment_fact": [
+    {
+      "FromTable": "order_fulfillment_fact",
+      "FromColumn": [
+        "order_id"
+      ],
+      "ToTable": "order",
+      "ToColumn": [
+        "order_id"
+      ]
+    },
+    {
+      "FromTable": "order_fulfillment_fact",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "product_sales": [
+    {
+      "FromTable": "product_sales",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "reviews_0": [
+    {
+      "FromTable": "reviews_0",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "reviews_0",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "reviews_1": [
+    {
+      "FromTable": "reviews_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "reviews_1",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "loyalty_program_0": [
+    {
+      "FromTable": "loyalty_program_0",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "browsing_history_0": [
+    {
+      "FromTable": "browsing_history_0",
+      "FromColumn": [
+        "user_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "browsing_history_1": [
+    {
+      "FromTable": "browsing_history_1",
+      "FromColumn": [
+        "user_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "customer_activity_0": [
+    {
+      "FromTable": "customer_activity_0",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "customer_activity_1": [
+    {
+      "FromTable": "customer_activity_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "wishlist_0": [
+    {
+      "FromTable": "wishlist_0",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    },
+    {
+      "FromTable": "wishlist_0",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "wishlist_1": [
+    {
+      "FromTable": "wishlist_1",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    },
+    {
+      "FromTable": "wishlist_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "customer_support_1": [
+    {
+      "FromTable": "customer_support_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "marketing_fact": [
+    {
+      "FromTable": "marketing_fact",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "marketing_fact",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "shipping_details": [
+    {
+      "FromTable": "shipping_details",
+      "FromColumn": [
+        "order_id"
+      ],
+      "ToTable": "order",
+      "ToColumn": [
+        "order_id"
+      ]
+    }
+  ],
+  "customer_address_history_1": [
+    {
+      "FromTable": "customer_address_history_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "customer_1": [
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_support_1",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "marketing_fact",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "order",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "sales_fact",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "sales_transaction",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "browsing_history_0",
+      "ToColumn": [
+        "user_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "browsing_history_1",
+      "ToColumn": [
+        "user_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_activity_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "customer_activity_1",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "reviews_0",
+      "ToColumn": [
+        "customer_id"
+      ]
+    },
+    {
+      "FromTable": "customer_1",
+      "FromColumn": [
+        "customer_id"
+      ],
+      "ToTable": "reviews_1",
+      "ToColumn": [
+        "customer_id"
+      ]
+    }
+  ],
+  "product_category": [
+    {
+      "FromTable": "product_category",
+      "FromColumn": [
+        "category_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "inventory_fact": [
+    {
+      "FromTable": "inventory_fact",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ],
+  "operational_metrics_fact": [
+    {
+      "FromTable": "operational_metrics_fact",
+      "FromColumn": [
+        "product_id"
+      ],
+      "ToTable": "product",
+      "ToColumn": [
+        "product_id"
+      ]
+    }
+  ]
+}
