@@ -1,0 +1,258 @@
+{
+  "name": "sales_fact",
+  "description": "Records detailed sales transaction data",
+  "primary_key_column": [
+    "order_id",
+    "product_id"
+  ],
+  "clustering_column": [
+    "order_date",
+    "customer_id"
+  ],
+  "partitioning_column": [
+    "order_date"
+  ],
+  "type": "Type 1 Fact Table",
+  "columns": [
+    {
+      "name": "order_id",
+      "description": "Unique identifier for each order",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "product_id",
+      "description": "Unique identifier for each product",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "customer_id",
+      "description": "Unique identifier for each customer",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "Y",
+      "enum": []
+    },
+    {
+      "name": "order_date",
+      "description": "Date when the order was placed",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "quantity",
+      "description": "Number of products ordered",
+      "data_type": "INTEGER",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "unit_price",
+      "description": "Price per unit of the product",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "total_price",
+      "description": "Total price of the order",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "discount_amount",
+      "description": "Discount applied to the order",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "payment_type",
+      "description": "Method of payment used",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "CREDIT",
+        "DEBIT",
+        "PAYPAL",
+        "CASH"
+      ]
+    },
+    {
+      "name": "shipping_cost",
+      "description": "Cost of shipping for the order",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "order_status",
+      "description": "Current status of the order",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "PLACED",
+        "SHIPPED",
+        "DELIVERED",
+        "CANCELLED"
+      ]
+    },
+    {
+      "name": "ship_date",
+      "description": "Date when the order was shipped",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "delivery_date",
+      "description": "Expected delivery date of the order",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "return_date",
+      "description": "Date when the product was returned",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "refund_amount",
+      "description": "Amount refunded for the order",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "customer_segment",
+      "description": "Segmentation type of the customer",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "VIP",
+        "LOYAL",
+        "OCCASIONAL",
+        "NEW"
+      ]
+    },
+    {
+      "name": "sales_channel",
+      "description": "Channel through which the sale was made",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "ONLINE",
+        "IN_STORE",
+        "PHONE",
+        "APP"
+      ]
+    },
+    {
+      "name": "warehouse_id",
+      "description": "Identifier for the warehouse",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "shipping_method",
+      "description": "Method used for shipping",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "STANDARD",
+        "EXPRESS",
+        "OVERNIGHT"
+      ]
+    },
+    {
+      "name": "coupon_code",
+      "description": "Coupon code used for the order",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "promo_id",
+      "description": "Promotion identifier applied to the order",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "order_notes",
+      "description": "Additional notes about the order",
+      "data_type": "STRING",
+      "format": "LowerCase",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+        "name": "gross_revenue",
+        "description": "Total revenue before deductions",
+        "data_type": "FLOAT",
+        "format": "",
+        "is_pii_column": "N",
+        "enum": []
+    },
+    {
+        "name": "net_revenue",
+        "description": "Revenue after discounts and returns",
+        "data_type": "FLOAT",
+        "format": "",
+        "is_pii_column": "N",
+        "enum": []
+    },
+    {
+        "name": "total_discounts",
+        "description": "Total discounts applied to the order",
+        "data_type": "FLOAT",
+        "format": "",
+        "is_pii_column": "N",
+        "enum": []
+    },
+    {
+        "name": "items_returned",
+        "description": "Number of items returned per order",
+        "data_type": "INTEGER",
+        "format": "",
+        "is_pii_column": "N",
+        "enum": []
+    },
+    {
+        "name": "items_shipped",
+        "description": "Number of items shipped per order",
+        "data_type": "INTEGER",
+        "format": "",
+        "is_pii_column": "N",
+        "enum": []
+    }
+  ]
+}

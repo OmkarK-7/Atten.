@@ -1,0 +1,224 @@
+{
+    "name": "browsing_history_0",
+    "description": "Tracks user browsing sessions and activities",
+    "primary_key_column": [
+        "session_id",
+        "user_id"
+    ],
+    "clustering_column": [
+        "session_start_time",
+        "user_id"
+    ],
+    "partitioning_column": [
+        "session_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "columns": [
+        {
+            "name": "session_id",
+            "description": "Unique identifier for the session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "user_id",
+            "description": "Unique identifier for the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "session_start_time",
+            "description": "Start time of the browsing session",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "session_end_time",
+            "description": "End time of the browsing session",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "session_date",
+            "description": "Date of the browsing session",
+            "data_type": "DATE",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "page_views",
+            "description": "Number of pages viewed in session",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "traffic_dimension_group"
+        },
+        {
+            "name": "user_agent",
+            "description": "Browser user agent of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "ip_address",
+            "description": "IP address of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "device_type",
+            "description": "Type of device used for browsing",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Desktop",
+                "Mobile",
+                "Tablet"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "region",
+            "description": "Region of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "entry_page",
+            "description": "First page visited in the session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "session_interaction_dimension_group"
+        },
+        {
+            "name": "exit_page",
+            "description": "Last page visited in the session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "session_interaction_dimension_group"
+        },
+        {
+            "name": "referral_source",
+            "description": "Referral source for the session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "referral_dimension_group"
+        },
+        {
+            "name": "search_terms",
+            "description": "Search terms used during the session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "session_interaction_dimension_group"
+        },
+        {
+            "name": "time_on_site",
+            "description": "Total time spent on site in seconds",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "traffic_dimension_group"
+        },
+        {
+            "name": "bounce_rate",
+            "description": "Bounce rate for the session",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "traffic_dimension_group"
+        },
+        {
+            "name": "conversion",
+            "description": "Whether a conversion occurred",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "session_interaction_dimension_group"
+        },
+        {
+            "name": "conversion_type",
+            "description": "Type of conversion",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Purchase",
+                "Signup",
+                "Lead"
+            ],
+            "dimension_group": "session_interaction_dimension_group"
+        },
+        {
+            "name": "cart_abandonment",
+            "description": "Whether the cart was abandoned",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "session_interaction_dimension_group"
+        },
+        {
+            "name": "product_views",
+            "description": "Number of product views in session",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "session_interaction_dimension_group"
+        }
+    ]
+}

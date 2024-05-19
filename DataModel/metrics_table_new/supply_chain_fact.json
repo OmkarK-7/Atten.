@@ -1,0 +1,204 @@
+{
+    "name": "supply_chain_fact",
+    "description": "Tracks transactions across the supply chain",
+    "primary_key_column": [
+        "order_id",
+        "product_id"
+    ],
+    "clustering_column": [
+        "order_date",
+        "ship_date"
+    ],
+    "partitioning_column": [
+        "order_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "Columns": [
+        {
+            "name": "order_id",
+            "description": "Unique identifier for orders",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "product_id",
+            "description": "Unique identifier for products",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "order_date",
+            "description": "Date when the order was placed",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "ship_date",
+            "description": "Date when the order was shipped",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "quantity_ordered",
+            "description": "Quantity of product ordered",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "unit_price",
+            "description": "Price per unit of product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "total_price",
+            "description": "Total price of the order",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for customers",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": []
+        },
+        {
+            "name": "supplier_id",
+            "description": "Unique identifier for suppliers",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "status",
+            "description": "Current status of the order",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "PENDING",
+                "SHIPPED",
+                "DELIVERED",
+                "CANCELLED"
+            ]
+        },
+        {
+            "name": "shipping_cost",
+            "description": "Cost incurred for shipping",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "warehouse_id",
+            "description": "Identifier for the warehouse",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "region",
+            "description": "Geographical region of order",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "country",
+            "description": "Country of the customer",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "payment_type",
+            "description": "Method of payment used",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "CREDIT_CARD",
+                "DEBIT_CARD",
+                "PAYPAL",
+                "CASH"
+            ]
+        },
+        {
+            "name": "is_expedited",
+            "description": "Whether shipping was expedited",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "delivery_date",
+            "description": "Actual delivery date of the order",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "order_cancelled",
+            "description": "Whether the order was cancelled",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "return_date",
+            "description": "Date when the product was returned",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "is_returned",
+            "description": "Whether the product was returned",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "discount_applied",
+            "description": "Discount applied on the order",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "coupon_code",
+            "description": "Coupon code used for the order",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": []
+        }
+    ]
+}

@@ -1,0 +1,210 @@
+{
+    "name": "product_recommendation",
+    "description": "Recommendations for customer product purchases",
+    "primary_key_column": [
+        "user_id",
+        "product_id"
+    ],
+    "clustering_column": [
+        "category_id",
+        "brand_id"
+    ],
+    "partitioning_column": [
+        "recommendation_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "columns": [
+        {
+            "name": "user_id",
+            "description": "Unique identifier for a user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "product_id",
+            "description": "Unique identifier for a product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "category_id",
+            "description": "Identifier for product category",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "brand_id",
+            "description": "Identifier for product brand",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "recommendation_date",
+            "description": "Date of product recommendation",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "recommendation_score",
+            "description": "Score of the recommendation",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "price",
+            "description": "Price of the recommended product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "stock_quantity",
+            "description": "Available stock for the product",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "color",
+            "description": "Color of the product",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "size",
+            "description": "Size of the product",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "material",
+            "description": "Material of the product",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "weight",
+            "description": "Weight of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "width",
+            "description": "Width of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "height",
+            "description": "Height of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "depth",
+            "description": "Depth of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "rating",
+            "description": "Average rating of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "review_count",
+            "description": "Number of reviews for the product",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "is_available",
+            "description": "Availability status of the product",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "true",
+                "false"
+            ],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "launch_date",
+            "description": "Market launch date of the product",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "discount_percentage",
+            "description": "Discount percentage on the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "last_updated",
+            "description": "Last update timestamp for recommendation",
+            "data_type": "TIMESTAMP",
+            "format": "YYYY-MM-DD HH:MM:SS",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        }
+    ]
+}

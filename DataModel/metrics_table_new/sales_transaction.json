@@ -1,0 +1,224 @@
+{
+    "name": "sales_transaction",
+    "description": "Records details of all sales transactions",
+    "primary_key_column": [
+        "transaction_id",
+        "transaction_date"
+    ],
+    "clustering_column": [
+        "customer_id",
+        "product_id"
+    ],
+    "partitioning_column": [
+        "transaction_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "Columns": [
+        {
+            "name": "transaction_id",
+            "description": "Unique identifier for the transaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "transaction_date",
+            "description": "Date when the transaction occurred",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "customer_id",
+            "description": "Identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "product_id",
+            "description": "Identifier for the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "quantity",
+            "description": "Number of products purchased",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "unit_price",
+            "description": "Price per unit of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "total_price",
+            "description": "Total price of the transaction",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "payment_type",
+            "description": "Method of payment used",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "CASH",
+                "CREDIT_CARD",
+                "DEBIT_CARD",
+                "PAYPAL",
+                "OTHER"
+            ]
+        },
+        {
+            "name": "status",
+            "description": "Current status of the transaction",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "PENDING",
+                "COMPLETED",
+                "CANCELLED",
+                "REFUNDED"
+            ]
+        },
+        {
+            "name": "shipping_address",
+            "description": "Shipping address for the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": []
+        },
+        {
+            "name": "billing_address",
+            "description": "Billing address of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": []
+        },
+        {
+            "name": "shipping_cost",
+            "description": "Cost of shipping the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "discount_amount",
+            "description": "Discount applied to the transaction",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "coupon_code",
+            "description": "Coupon code used for the transaction",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "sales_channel",
+            "description": "Channel through which the sale was made",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "ONLINE",
+                "IN_STORE",
+                "PHONE",
+                "APP"
+            ]
+        },
+        {
+            "name": "order_id",
+            "description": "Identifier for the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "employee_id",
+            "description": "Identifier for the employee handling transaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "store_id",
+            "description": "Identifier for the store of transaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "tax_amount",
+            "description": "Tax amount applied to the transaction",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "currency",
+            "description": "Currency used for the transaction",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "USD",
+                "EUR",
+                "GBP",
+                "JPY",
+                "CAD"
+            ]
+        },
+        {
+            "name": "refund_amount",
+            "description": "Amount refunded, if any",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "delivery_date",
+            "description": "Expected delivery date of the product",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "customer_feedback",
+            "description": "Feedback provided by the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        }
+    ]
+}

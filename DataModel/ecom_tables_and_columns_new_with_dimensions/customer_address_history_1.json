@@ -1,0 +1,187 @@
+{
+    "name": "customer_address_history_1",
+    "description": "Tracks historical customer address data",
+    "primary_key_column": [
+        "customer_id",
+        "address_id"
+    ],
+    "clustering_column": [
+        "customer_id",
+        "effective_date"
+    ],
+    "partitioning_column": [
+        "effective_date"
+    ],
+    "type": "Type 2 Dimension Table",
+    "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for a customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "address_id",
+            "description": "Unique identifier for an address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "effective_date",
+            "description": "Start date of address validity",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "end_date",
+            "description": "End date of address validity",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "address_line1",
+            "description": "Primary address line",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "address_line2",
+            "description": "Secondary address line",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "state",
+            "description": "State of the address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "postal_code",
+            "description": "Postal code of the address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "address_type",
+            "description": "Type of address (e.g., Home, Work)",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Home",
+                "Work",
+                "Other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "status",
+            "description": "Status of the address (Active, Inactive)",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Active",
+                "Inactive"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "last_updated",
+            "description": "Timestamp of last update",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "updated_by",
+            "description": "Identifier of updater",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "latitude",
+            "description": "Latitude of the address",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "longitude",
+            "description": "Longitude of the address",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "psychographic_info",
+            "description": "Psychographic information of customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_behavior_segment_dimension_group"
+        },
+        {
+            "name": "behavioral_data",
+            "description": "Behavioral data of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        }
+    ]
+}

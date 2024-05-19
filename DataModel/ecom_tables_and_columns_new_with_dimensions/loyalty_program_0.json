@@ -1,0 +1,232 @@
+{
+    "name": "loyalty_program_0",
+    "description": "Tracks customer loyalty program engagement",
+    "primary_key_column": [
+        "customer_id",
+        "program_id"
+    ],
+    "clustering_column": [
+        "customer_region",
+        "program_type"
+    ],
+    "partitioning_column": [
+        "enrollment_date"
+    ],
+    "type": "Type 2 Dimension Table",
+    "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for a customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "program_id",
+            "description": "Unique identifier for the loyalty program",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "first_name",
+            "description": "Customer's first name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "last_name",
+            "description": "Customer's last name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "email",
+            "description": "Customer's email address",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "phone_number",
+            "description": "Customer's contact number",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "dob",
+            "description": "Customer's date of birth",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "gender",
+            "description": "Customer's gender",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_region",
+            "description": "Region where customer resides",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "postal_code",
+            "description": "Postal code of customer's location",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "address",
+            "description": "Customer's residential address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "enrollment_date",
+            "description": "Date of enrollment in the program",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "program_type",
+            "description": "Type of loyalty program",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Silver",
+                "Gold",
+                "Platinum"
+            ],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "points_earned",
+            "description": "Total loyalty points earned",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "points_redeemed",
+            "description": "Total loyalty points redeemed",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "last_activity_date",
+            "description": "Date of last activity in the program",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "membership_status",
+            "description": "Current status of the membership",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Active",
+                "Inactive",
+                "Cancelled"
+            ],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "annual_spend",
+            "description": "Annual spend by the customer",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "customer_segment",
+            "description": "Segmentation of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "High Value",
+                "Medium Value",
+                "Low Value"
+            ],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "marketing_opt_in",
+            "description": "Customer opted in for marketing",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        }
+    ]
+}

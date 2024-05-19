@@ -1,0 +1,225 @@
+{
+    "name": "customer_search_1",
+    "description": "Tracks customer search behavior and demographics",
+    "primary_key_column": [
+        "customer_id",
+        "search_id"
+    ],
+    "clustering_column": [
+        "search_date",
+        "customer_id"
+    ],
+    "partitioning_column": [
+        "search_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for a customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "search_id",
+            "description": "Unique identifier for a search event",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "search_date",
+            "description": "Date when the search was made",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "search_time",
+            "description": "Time when the search was made",
+            "data_type": "TIME",
+            "format": "HH:MM:SS",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "search_query",
+            "description": "Text of the search query",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "product_category",
+            "description": "Category of product searched",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "electronics",
+                "clothing",
+                "home",
+                "beauty",
+                "books"
+            ],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "device_type",
+            "description": "Device used for the search",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "desktop",
+                "mobile",
+                "tablet"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "browser_type",
+            "description": "Browser used for the search",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "chrome",
+                "firefox",
+                "safari",
+                "edge",
+                "other"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "ip_address",
+            "description": "IP address of the device",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "traffic_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "region",
+            "description": "Region of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "zipcode",
+            "description": "Postal code of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "age",
+            "description": "Age of the customer",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "gender",
+            "description": "Gender of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "male",
+                "female",
+                "other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "income_range",
+            "description": "Income range of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "<20K",
+                "20K-50K",
+                "50K-100K",
+                ">100K"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "education_level",
+            "description": "Education level of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "none",
+                "high_school",
+                "bachelor",
+                "master",
+                "doctorate"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "marital_status",
+            "description": "Marital status of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "single",
+                "married",
+                "divorced",
+                "widowed"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "interests",
+            "description": "Interests and hobbies of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        }
+    ]
+}

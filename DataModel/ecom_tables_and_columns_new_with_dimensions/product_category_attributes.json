@@ -1,0 +1,243 @@
+{
+    "name": "product_category_attributes",
+    "description": "Attributes defining product categories",
+    "primary_key_column": [
+        "category_id",
+        "attribute_id"
+    ],
+    "clustering_column": [
+        "category_id",
+        "attribute_name"
+    ],
+    "partitioning_column": [
+        "last_updated"
+    ],
+    "type": "Type 2 Dimension Table",
+    "columns": [
+        {
+            "name": "category_id",
+            "description": "Unique identifier for the category",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "attribute_id",
+            "description": "Unique identifier for the attribute",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "attribute_name",
+            "description": "Name of the attribute",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "attribute_value",
+            "description": "Value of the attribute",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "attribute_type",
+            "description": "Type of the attribute",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "text",
+                "number",
+                "date",
+                "boolean"
+            ],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "is_filterable",
+            "description": "If attribute is filterable",
+            "data_type": "BOOL",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "is_required",
+            "description": "If attribute is required",
+            "data_type": "BOOL",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "display_order",
+            "description": "Display order in the UI",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "created_at",
+            "description": "Timestamp of creation",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "updated_at",
+            "description": "Timestamp of last update",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "last_updated",
+            "description": "Last update for partitioning",
+            "data_type": "DATE",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "status",
+            "description": "Status of the attribute",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "ACTIVE",
+                "INACTIVE",
+                "DEPRECATED"
+            ],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "visibility",
+            "description": "Visibility on the platform",
+            "data_type": "BOOL",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "source_system",
+            "description": "System where attribute originated",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "source_system_dimension_group"
+        },
+        {
+            "name": "default_value",
+            "description": "Default value of the attribute",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "min_value",
+            "description": "Minimum value for numeric attributes",
+            "data_type": "FLOAT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "max_value",
+            "description": "Maximum value for numeric attributes",
+            "data_type": "FLOAT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "unit_of_measure",
+            "description": "Unit of measure for the value",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "category_name",
+            "description": "Name of the product category",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "description",
+            "description": "Description of the attribute",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "content_dimension_group"
+        },
+        {
+            "name": "is_searchable",
+            "description": "If attribute is searchable",
+            "data_type": "BOOL",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "is_comparable",
+            "description": "If attribute is comparable",
+            "data_type": "BOOL",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "is_configurable",
+            "description": "If attribute is configurable",
+            "data_type": "BOOL",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "data_source",
+            "description": "Source of the attribute data",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "source_system_dimension_group"
+        }
+    ]
+}

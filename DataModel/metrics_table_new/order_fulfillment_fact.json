@@ -1,0 +1,210 @@
+{
+    "name": "order_fulfillment_fact",
+    "description": "Tracks details of e-commerce order fulfillments",
+    "primary_key_column": [
+        "order_id",
+        "product_id"
+    ],
+    "clustering_column": [
+        "order_date",
+        "ship_date"
+    ],
+    "partitioning_column": [
+        "order_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "Columns": [
+        {
+            "name": "order_id",
+            "description": "Unique identifier for the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "product_id",
+            "description": "Unique identifier for the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": []
+        },
+        {
+            "name": "order_date",
+            "description": "Date when the order was placed",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "ship_date",
+            "description": "Date when the order was shipped",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "quantity_ordered",
+            "description": "Quantity of product ordered",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "quantity_shipped",
+            "description": "Quantity of product shipped",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "unit_price",
+            "description": "Price per unit of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "total_price",
+            "description": "Total price of the shipped items",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "shipping_fee",
+            "description": "Shipping fee for the order",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "warehouse_id",
+            "description": "Identifier for the warehouse",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "carrier_id",
+            "description": "Identifier for the shipping carrier",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "payment_method",
+            "description": "Method used for payment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Credit Card",
+                "Debit Card",
+                "PayPal",
+                "Bank Transfer"
+            ]
+        },
+        {
+            "name": "order_status",
+            "description": "Current status of the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Pending",
+                "Shipped",
+                "Delivered",
+                "Cancelled"
+            ]
+        },
+        {
+            "name": "return_status",
+            "description": "Return status of the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "No Return",
+                "Returned",
+                "Partial Return"
+            ]
+        },
+        {
+            "name": "customer_segment",
+            "description": "Segmentation type for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Business",
+                "Consumer",
+                "Home Office"
+            ]
+        },
+        {
+            "name": "order_priority",
+            "description": "Priority level of the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Low",
+                "Medium",
+                "High",
+                "Critical"
+            ]
+        },
+        {
+            "name": "sales_channel",
+            "description": "Channel through which sale was made",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Online",
+                "Offline",
+                "Direct",
+                "Partner"
+            ]
+        },
+        {
+            "name": "order_type",
+            "description": "Type of order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Standard",
+                "Express",
+                "Same Day"
+            ]
+        },
+        {
+            "name": "fulfillment_center_id",
+            "description": "Identifier for the fulfillment center",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        }
+    ]
+}

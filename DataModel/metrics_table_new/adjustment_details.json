@@ -1,0 +1,237 @@
+{
+    "name": "adjustment_details",
+    "description": "Tracks adjustments made to transactions",
+    "primary_key_column": [
+        "adjustment_id",
+        "transaction_id"
+    ],
+    "clustering_column": [
+        "adjustment_date",
+        "adjustment_type"
+    ],
+    "partitioning_column": [
+        "adjustment_date"
+    ],
+    "type": "Type 2 Fact Table",
+    "columns": [
+        {
+            "name": "adjustment_id",
+            "description": "Unique identifier for each adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "transaction_id",
+            "description": "Identifier of the transaction adjusted",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "adjustment_type",
+            "description": "Type of adjustment made",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "refund",
+                "discount",
+                "correction"
+            ],
+            "dimension_group": ""
+        },
+        {
+            "name": "adjustment_date",
+            "description": "Date when the adjustment was made",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "adjustment_amount",
+            "description": "Amount adjusted in the transaction",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "adjusted_by",
+            "description": "Employee ID who made the adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "reason_code",
+            "description": "Code describing reason for adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "original_amount",
+            "description": "Original transaction amount before adjustment",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "new_amount",
+            "description": "New transaction amount after adjustment",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "currency",
+            "description": "Currency of the adjustment amount",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "USD",
+                "EUR",
+                "GBP"
+            ],
+            "dimension_group": ""
+        },
+        {
+            "name": "status",
+            "description": "Current status of the adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "pending",
+                "approved",
+                "rejected"
+            ],
+            "dimension_group": ""
+        },
+        {
+            "name": "comments",
+            "description": "Additional comments on the adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "content_dimension_group"
+        },
+        {
+            "name": "created_at",
+            "description": "Timestamp when the record was created",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "updated_at",
+            "description": "Timestamp when the record was last updated",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "approved_by",
+            "description": "Employee ID who approved the adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "approval_date",
+            "description": "Date when the adjustment was approved",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "source_system",
+            "description": "System from which adjustment originated",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "channel_dimension_group"
+        },
+        {
+            "name": "batch_id",
+            "description": "Batch ID for processing adjustments",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "related_adjustment_id",
+            "description": "ID of related adjustment if applicable",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "audit_trail",
+            "description": "Audit trail for tracking changes",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "region",
+            "description": "Geographical region of the adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "department",
+            "description": "Department responsible for the adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "external_reference",
+            "description": "External reference linked to adjustment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "referral_dimension_group"
+        }
+    ]
+}

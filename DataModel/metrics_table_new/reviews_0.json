@@ -1,0 +1,279 @@
+{
+    "name": "reviews_0",
+    "description": "Stores detailed customer review data",
+    "primary_key_column": [
+        "review_id",
+        "customer_id"
+    ],
+    "clustering_column": [
+        "customer_age",
+        "customer_gender"
+    ],
+    "partitioning_column": [
+        "review_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "columns": [
+        {
+            "name": "review_id",
+            "description": "Unique identifier for the review",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "product_id",
+            "description": "Unique identifier for the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "review_date",
+            "description": "Date when the review was posted",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "rating",
+            "description": "Rating given by the customer",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "review_text",
+            "description": "Text of the customer's review",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "customer_age",
+            "description": "Age of the customer",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_gender",
+            "description": "Gender of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_income",
+            "description": "Annual income of the customer",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_education",
+            "description": "Education level of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "High School",
+                "Bachelor's",
+                "Master's",
+                "PhD",
+                "Other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_marital_status",
+            "description": "Marital status of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Single",
+                "Married",
+                "Divorced",
+                "Widowed"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_ethnicity",
+            "description": "Ethnic background of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Caucasian",
+                "Hispanic",
+                "African American",
+                "Asian",
+                "Other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_nationality",
+            "description": "Nationality of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_residence_country",
+            "description": "Country of residence of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_residence_city",
+            "description": "City of residence of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "purchase_frequency",
+            "description": "Frequency of purchases by the customer",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "last_purchase_date",
+            "description": "Date of the last purchase",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "preferred_category",
+            "description": "Preferred product category of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "device_used",
+            "description": "Device used to write the review",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Desktop",
+                "Laptop",
+                "Tablet",
+                "Smartphone"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "browser_used",
+            "description": "Browser used to write the review",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Chrome",
+                "Firefox",
+                "Safari",
+                "Edge",
+                "Other"
+            ],
+            "dimension_group": "traffic_dimension_group"
+        },
+        {
+            "name": "purchase_channel",
+            "description": "Channel through which the purchase was made",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Online",
+                "In-store",
+                "Mobile App"
+            ],
+            "dimension_group": "channel_dimension_group"
+        },
+        {
+            "name": "review_helpfulness",
+            "description": "Helpfulness rating of the review",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "verified_purchase",
+            "description": "Whether the purchase was verified",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "response_from_seller",
+            "description": "Seller's response to the review",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "review_language",
+            "description": "Language in which the review was written",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        }
+    ]
+}

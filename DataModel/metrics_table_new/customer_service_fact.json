@@ -1,0 +1,196 @@
+{
+    "name": "customer_service_fact",
+    "description": "Tracks all customer service interactions",
+    "primary_key_column": [
+        "ticket_id",
+        "customer_id"
+    ],
+    "clustering_column": [
+        "created_date",
+        "customer_id"
+    ],
+    "partitioning_column": [
+        "created_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "Columns": [
+        {
+            "name": "ticket_id",
+            "description": "Unique identifier for the ticket",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": []
+        },
+        {
+            "name": "agent_id",
+            "description": "Identifier for the service agent",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "issue_type",
+            "description": "Type of customer issue",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "billing",
+                "technical",
+                "delivery",
+                "product"
+            ]
+        },
+        {
+            "name": "created_date",
+            "description": "Date the ticket was created",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "resolved_date",
+            "description": "Date the ticket was resolved",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "priority",
+            "description": "Priority level of the ticket",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "low",
+                "medium",
+                "high"
+            ]
+        },
+        {
+            "name": "status",
+            "description": "Current status of the ticket",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "open",
+                "closed",
+                "pending"
+            ]
+        },
+        {
+            "name": "channel",
+            "description": "Communication channel used",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "email",
+                "phone",
+                "chat",
+                "social_media"
+            ]
+        },
+        {
+            "name": "duration_minutes",
+            "description": "Duration of the service interaction",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "first_response_time_minutes",
+            "description": "Time to first response in minutes",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "resolution_time_minutes",
+            "description": "Time taken to resolve the ticket",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "satisfaction_rating",
+            "description": "Customer satisfaction rating",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "feedback_comments",
+            "description": "Customer feedback in text",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "escalated",
+            "description": "Whether the ticket was escalated",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "reopened",
+            "description": "Whether the ticket was reopened",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "product_id",
+            "description": "Identifier for the product involved",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "product_category",
+            "description": "Category of the product involved",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "issue_resolution_code",
+            "description": "Code for how the issue was resolved",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "follow_up_required",
+            "description": "Whether follow-up is required",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        }
+    ]
+}

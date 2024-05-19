@@ -1,0 +1,226 @@
+{
+    "name": "customer_support_1",
+    "description": "Tracks all customer support interactions",
+    "primary_key_column": [
+        "ticket_id",
+        "customer_id"
+    ],
+    "clustering_column": [
+        "created_date",
+        "customer_id"
+    ],
+    "partitioning_column": [
+        "created_date"
+    ],
+    "type": "Type 2 Fact Table",
+    "columns": [
+        {
+            "name": "ticket_id",
+            "description": "Unique identifier for support ticket",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "customer_id",
+            "description": "Identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "created_date",
+            "description": "Date the ticket was created",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "issue_type",
+            "description": "Type of issue reported",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "billing",
+                "technical",
+                "product",
+                "other"
+            ],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "status",
+            "description": "Current status of the ticket",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "open",
+                "closed",
+                "pending",
+                "escalated"
+            ],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "priority",
+            "description": "Priority level of the ticket",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "low",
+                "medium",
+                "high"
+            ],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "assigned_to",
+            "description": "Support agent ticket is assigned to",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "resolution_time",
+            "description": "Time taken to resolve the ticket",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "first_response_time",
+            "description": "Time for first response to ticket",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "customer_satisfaction",
+            "description": "Customer satisfaction rating",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "channel",
+            "description": "Channel through which ticket was raised",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "email",
+                "phone",
+                "chat",
+                "social_media"
+            ],
+            "dimension_group": "channel_dimension_group"
+        },
+        {
+            "name": "last_updated",
+            "description": "Last update timestamp for the ticket",
+            "data_type": "TIMESTAMP",
+            "format": "YYYY-MM-DD HH:MM:SS",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "notes",
+            "description": "Additional notes on the support ticket",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "escalated",
+            "description": "Whether the ticket was escalated",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_support_dimension_group"
+        },
+        {
+            "name": "device_used",
+            "description": "Device used by customer for contact",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "desktop",
+                "mobile",
+                "tablet",
+                "other"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "os_used",
+            "description": "Operating system of the device used",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Windows",
+                "macOS",
+                "Linux",
+                "Android",
+                "iOS",
+                "other"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "app_version",
+            "description": "Version of the app used, if applicable",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "browser_used",
+            "description": "Web browser used to contact support",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Chrome",
+                "Firefox",
+                "Safari",
+                "Edge",
+                "other"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country from which the customer contacted",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        }
+    ]
+}

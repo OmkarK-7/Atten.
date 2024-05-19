@@ -1,0 +1,213 @@
+{
+    "name": "customer_address_history_0",
+    "description": "Tracks historical customer address data",
+    "primary_key_column": [
+        "customer_id",
+        "address_id"
+    ],
+    "clustering_column": [
+        "country",
+        "state"
+    ],
+    "partitioning_column": [
+        "effective_date"
+    ],
+    "type": "Type 2 Dimension Table",
+    "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "address_id",
+            "description": "Unique identifier for the address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "effective_date",
+            "description": "Start date of address validity",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "end_date",
+            "description": "End date of address validity",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the customer's address",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "state",
+            "description": "State of the customer's address",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the customer's address",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "postal_code",
+            "description": "Postal code of the customer's address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "street_address",
+            "description": "Street address of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "latitude",
+            "description": "Latitude for geolocation",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "longitude",
+            "description": "Longitude for geolocation",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "location_type",
+            "description": "Type of location (e.g., Residential)",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "RESIDENTIAL",
+                "COMMERCIAL",
+                "INDUSTRIAL"
+            ],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "address_status",
+            "description": "Current status of the address",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "ACTIVE",
+                "INACTIVE"
+            ],
+            "dimension_group": ""
+        },
+        {
+            "name": "last_updated",
+            "description": "Timestamp of last update",
+            "data_type": "TIMESTAMP",
+            "format": "YYYY-MM-DD HH:MM:SS",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "created_at",
+            "description": "Timestamp when record was created",
+            "data_type": "TIMESTAMP",
+            "format": "YYYY-MM-DD HH:MM:SS",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "lifestyle_segment",
+            "description": "Lifestyle segment of the customer",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "URBAN",
+                "SUBURBAN",
+                "RURAL"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "purchase_behavior",
+            "description": "Purchase behavior classification",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "FREQUENT",
+                "MODERATE",
+                "RARE"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "customer_value",
+            "description": "Value tier of the customer",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "communication_preference",
+            "description": "Preferred communication method",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "EMAIL",
+                "PHONE",
+                "MAIL",
+                "SMS"
+            ],
+            "dimension_group": "customer_dimension_group"
+        }
+    ]
+}

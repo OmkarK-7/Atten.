@@ -1,0 +1,221 @@
+{
+    "name": "operational_metrics_fact",
+    "description": "Stores daily operational metrics for analysis",
+    "primary_key_column": [
+        "date",
+        "store_id"
+    ],
+    "clustering_column": [
+        "store_id",
+        "product_id"
+    ],
+    "partitioning_column": [
+        "date"
+    ],
+    "type": "Type 1 Fact Table",
+    "Columns": [
+        {
+            "name": "date",
+            "description": "The date of data recording",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "store_id",
+            "description": "Unique identifier for a store",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "product_id",
+            "description": "Unique identifier for a product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "sales_volume",
+            "description": "Total sales volume for the product",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "sales_amount",
+            "description": "Total sales amount in USD",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "returns_volume",
+            "description": "Total volume of returned products",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "returns_amount",
+            "description": "Total amount of returns in USD",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "customer_visits",
+            "description": "Number of customer visits",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "new_customers",
+            "description": "Number of new customers acquired",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "repeat_customers",
+            "description": "Number of repeat customers",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "average_basket_size",
+            "description": "Average number of items per basket",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "average_basket_value",
+            "description": "Average value of baskets in USD",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "customer_satisfaction_score",
+            "description": "Average customer satisfaction score",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "stock_outs",
+            "description": "Number of times stock was out",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "inventory_levels",
+            "description": "Current inventory levels",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "promotional_activity",
+            "description": "Type of promotional activity",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "NONE",
+                "DISCOUNT",
+                "BUY_ONE_GET_ONE",
+                "FLASH_SALE"
+            ]
+        },
+        {
+            "name": "weather_conditions",
+            "description": "Weather conditions during the day",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "SUNNY",
+                "CLOUDY",
+                "RAINY",
+                "SNOWY",
+                "WINDY"
+            ]
+        },
+        {
+            "name": "local_events",
+            "description": "Local events affecting store traffic",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "employee_count",
+            "description": "Number of employees working",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "operational_costs",
+            "description": "Total operational costs in USD",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "marketing_spend",
+            "description": "Total marketing spend in USD",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "technology_spend",
+            "description": "Total technology spend in USD",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "rental_costs",
+            "description": "Total rental costs of the store",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "utility_costs",
+            "description": "Total utility costs in USD",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        }
+    ]
+}

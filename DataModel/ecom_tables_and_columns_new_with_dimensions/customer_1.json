@@ -1,0 +1,254 @@
+{
+    "name": "customer_1",
+    "description": "Stores detailed customer profile and behavior data",
+    "primary_key_column": [
+        "customer_id"
+    ],
+    "clustering_column": [
+        "last_purchase_date",
+        "customer_segment"
+    ],
+    "partitioning_column": [
+        "registration_date"
+    ],
+    "type": "Type 2 Dimension Table",
+    "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "first_name",
+            "description": "Customer's first name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "last_name",
+            "description": "Customer's last name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "email",
+            "description": "Customer's email address",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "phone_number",
+            "description": "Customer's contact number",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "registration_date",
+            "description": "Date when customer registered",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "last_purchase_date",
+            "description": "Most recent purchase date",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "customer_segment",
+            "description": "Segmentation type based on behavior",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "VIP",
+                "Regular",
+                "Occasional"
+            ],
+            "dimension_group": "user_segment_dimension_group"
+        },
+        {
+            "name": "total_spent",
+            "description": "Total amount spent by customer",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "number_of_orders",
+            "description": "Total number of orders placed",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "preferred_payment_method",
+            "description": "Most used payment method",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Credit Card",
+                "Debit Card",
+                "PayPal",
+                "Bitcoin"
+            ],
+            "dimension_group": "payment_method_dimension_group"
+        },
+        {
+            "name": "last_login_device",
+            "description": "Device used for last login",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Desktop",
+                "Mobile",
+                "Tablet"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "preferred_device",
+            "description": "Most frequently used device",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Desktop",
+                "Mobile",
+                "Tablet"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "app_usage_frequency",
+            "description": "Frequency of app usage",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Daily",
+                "Weekly",
+                "Monthly",
+                "Rarely"
+            ],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "website_visits",
+            "description": "Number of visits to the website",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "newsletter_subscription",
+            "description": "Subscription status for newsletter",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "content_dimension_group"
+        },
+        {
+            "name": "loyalty_program_status",
+            "description": "Status in loyalty program",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Active",
+                "Inactive",
+                "Prospective"
+            ],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "birth_date",
+            "description": "Customer's date of birth",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "age",
+            "description": "Customer's age",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "gender",
+            "description": "Customer's gender",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "address",
+            "description": "Customer's physical address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the customer's address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the customer's address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        }
+    ]
+}

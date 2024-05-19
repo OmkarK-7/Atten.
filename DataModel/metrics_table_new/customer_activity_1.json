@@ -1,0 +1,207 @@
+{
+  "name": "customer_activity_1",
+  "description": "Tracks customer interactions and preferences",
+  "primary_key_column": [
+    "customer_id",
+    "session_id"
+  ],
+  "clustering_column": [
+    "last_activity_date",
+    "customer_region"
+  ],
+  "partitioning_column": [
+    "last_activity_date"
+  ],
+  "type": "Type 1 Fact Table",
+  "columns": [
+    {
+      "name": "customer_id",
+      "description": "Unique identifier for a customer",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": ""
+    },
+    {
+      "name": "session_id",
+      "description": "Unique identifier for a session",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": ""
+    },
+    {
+      "name": "first_name",
+      "description": "Customer's first name",
+      "data_type": "STRING",
+      "format": "CamelCase",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "last_name",
+      "description": "Customer's last name",
+      "data_type": "STRING",
+      "format": "CamelCase",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "email",
+      "description": "Customer's email address",
+      "data_type": "STRING",
+      "format": "LowerCase",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "age",
+      "description": "Customer's age",
+      "data_type": "INTEGER",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "gender",
+      "description": "Customer's gender",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [
+        "Male",
+        "Female",
+        "Other"
+      ],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "customer_region",
+      "description": "Geographic region of the customer",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "geographic_dimension_group"
+    },
+    {
+      "name": "last_activity_date",
+      "description": "Date of last activity",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "time_dimension_group"
+    },
+    {
+      "name": "device_type",
+      "description": "Type of device used",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [
+        "Desktop",
+        "Mobile",
+        "Tablet"
+      ],
+      "dimension_group": "device_dimension_group"
+    },
+    {
+      "name": "browser_type",
+      "description": "Type of browser used",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Edge",
+        "Other"
+      ],
+      "dimension_group": "device_dimension_group"
+    },
+    {
+      "name": "purchase_count",
+      "description": "Number of purchases made",
+      "data_type": "INTEGER",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "transaction_dimension_group"
+    },
+    {
+      "name": "total_spent",
+      "description": "Total amount spent",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "transaction_dimension_group"
+    },
+    {
+      "name": "loyalty_member",
+      "description": "Is a loyalty program member",
+      "data_type": "BOOLEAN",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "loyalty_dimension_group"
+    },
+    {
+      "name": "marketing_opt_in",
+      "description": "Opted in for marketing",
+      "data_type": "BOOLEAN",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "customer_behavior_segment_dimension_group"
+    },
+    {
+      "name": "landing_page",
+      "description": "First page visited during the session",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "exit_page",
+      "description": "Last page visited during the session",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "bounce_status",
+      "description": "Whether the session was a bounce (single page visit)",
+      "data_type": "BOOLEAN",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "conversion_event",
+      "description": "Event that indicates a conversion was made",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "referral_source",
+      "description": "Source from which the visitor was referred",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    }
+  ]
+}

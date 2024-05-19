@@ -1,0 +1,292 @@
+{
+    "name": "browsing_history_1",
+    "description": "Tracks user browsing behavior and preferences",
+    "primary_key_column": [
+        "user_id",
+        "session_id"
+    ],
+    "clustering_column": [
+        "session_start_time",
+        "page_viewed"
+    ],
+    "partitioning_column": [
+        "session_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "columns": [
+        {
+            "name": "user_id",
+            "description": "Unique identifier for a user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "session_id",
+            "description": "Unique identifier for a session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "session_date",
+            "description": "Date of the browsing session",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "session_start_time",
+            "description": "Start time of the browsing session",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "page_viewed",
+            "description": "URL of the page viewed",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "content_dimension_group"
+        },
+        {
+            "name": "device_type",
+            "description": "Type of device used for browsing",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "desktop",
+                "mobile",
+                "tablet"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "browser_type",
+            "description": "Type of browser used",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "chrome",
+                "firefox",
+                "safari",
+                "edge",
+                "other"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "os_type",
+            "description": "Operating system of the device",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "windows",
+                "macos",
+                "linux",
+                "android",
+                "ios",
+                "other"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "region",
+            "description": "Region of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "zip_code",
+            "description": "Postal code of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "interests",
+            "description": "Interests of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "age_group",
+            "description": "Age group of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "18-24",
+                "25-34",
+                "35-44",
+                "45-54",
+                "55-64",
+                "65+"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "gender",
+            "description": "Gender of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "male",
+                "female",
+                "other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "income_range",
+            "description": "Income range of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "low",
+                "medium",
+                "high"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "education_level",
+            "description": "Education level of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "none",
+                "high_school",
+                "bachelor",
+                "master",
+                "doctorate"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "employment_status",
+            "description": "Employment status of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "employed",
+                "unemployed",
+                "self-employed",
+                "student",
+                "retired"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "marital_status",
+            "description": "Marital status of the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "single",
+                "married",
+                "divorced",
+                "widowed"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "number_of_sessions",
+            "description": "Total number of sessions by the user",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "average_session_duration",
+            "description": "Average duration of sessions",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "total_pages_viewed",
+            "description": "Total pages viewed by the user",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "most_viewed_category",
+            "description": "Most viewed category by the user",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "last_active_date",
+            "description": "Last active date of the user",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "referrer",
+            "description": "Referrer URL for the session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "traffic_dimension_group"
+        }
+    ]
+}

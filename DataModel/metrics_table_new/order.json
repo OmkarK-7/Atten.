@@ -1,0 +1,227 @@
+{
+    "name": "order",
+    "description": "Stores detailed records of customer orders",
+    "primary_key_column": [
+        "order_id",
+        "order_item_id"
+    ],
+    "clustering_column": [
+        "order_date",
+        "customer_id"
+    ],
+    "partitioning_column": [
+        "order_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "columns": [
+        {
+            "name": "order_id",
+            "description": "Unique identifier for the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "order_item_id",
+            "description": "Identifier for items within an order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "product_id",
+            "description": "Unique identifier for the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "quantity",
+            "description": "Number of products ordered",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "unit_price",
+            "description": "Price per unit of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "subtotal",
+            "description": "Total price before taxes",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "tax_amount",
+            "description": "Tax amount for the order",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "total_amount",
+            "description": "Total amount including taxes",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "order_date",
+            "description": "Date when the order was placed",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "ship_date",
+            "description": "Date when the order was shipped",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "delivery_date",
+            "description": "Expected delivery date",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "order_status",
+            "description": "Current status of the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "placed",
+                "confirmed",
+                "shipped",
+                "delivered",
+                "cancelled"
+            ],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "payment_method",
+            "description": "Payment method used",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "credit_card",
+                "debit_card",
+                "paypal",
+                "cash_on_delivery"
+            ],
+            "dimension_group": "payment_method_dimension_group"
+        },
+        {
+            "name": "billing_address_id",
+            "description": "Identifier for billing address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "shipping_address_id",
+            "description": "Identifier for shipping address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "coupon_code",
+            "description": "Coupon code applied to the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "campaign_dimension_group"
+        },
+        {
+            "name": "discount_amount",
+            "description": "Discount amount applied",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "customer_note",
+            "description": "Notes from the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_behavior_segment_dimension_group"
+        },
+        {
+            "name": "internal_note",
+            "description": "Internal notes about the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "content_dimension_group"
+        },
+        {
+            "name": "created_at",
+            "description": "Timestamp when the order was created",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "updated_at",
+            "description": "Timestamp when the order was last updated",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        }
+    ]
+}

@@ -1,0 +1,222 @@
+{
+    "name": "product_category_pricing",
+    "description": "Stores product pricing across categories",
+    "primary_key_column": [
+        "product_id",
+        "category_id"
+    ],
+    "clustering_column": [
+        "category_id",
+        "brand_id"
+    ],
+    "partitioning_column": [
+        "date_updated"
+    ],
+    "type": "Type 2 Dimension Table",
+    "columns": [
+        {
+            "name": "product_id",
+            "description": "Unique identifier for products",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "category_id",
+            "description": "Identifier for product category",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "brand_id",
+            "description": "Identifier for product brand",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "price",
+            "description": "Current price of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "currency",
+            "description": "Currency of the price listed",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "USD",
+                "EUR",
+                "GBP",
+                "JPY"
+            ],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "date_updated",
+            "description": "Last update date for the price",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "discount_percentage",
+            "description": "Discount offered on the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "stock_quantity",
+            "description": "Number of items currently in stock",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "inventory_dimension_group"
+        },
+        {
+            "name": "minimum_order_quantity",
+            "description": "Minimum quantity for ordering",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "shipping_cost",
+            "description": "Cost of shipping this product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "supplier_id",
+            "description": "Identifier for the product supplier",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "inventory_dimension_group"
+        },
+        {
+            "name": "rating_average",
+            "description": "Average rating for the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "review_count",
+            "description": "Count of reviews for the product",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "is_active",
+            "description": "Whether the product is active for sale",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "true",
+                "false"
+            ],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "color",
+            "description": "Color of the product",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "size",
+            "description": "Size of the product",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "material",
+            "description": "Material of the product",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "weight",
+            "description": "Weight of the product in kilograms",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "length",
+            "description": "Length of the product in centimeters",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "width",
+            "description": "Width of the product in centimeters",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        },
+        {
+            "name": "height",
+            "description": "Height of the product in centimeters",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_attribute_dimension_group"
+        }
+    ]
+}

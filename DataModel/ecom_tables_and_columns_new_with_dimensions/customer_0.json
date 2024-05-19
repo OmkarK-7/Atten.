@@ -1,0 +1,275 @@
+{
+    "name": "customer_0",
+    "description": "Stores detailed customer information and behavior",
+    "primary_key_column": [
+        "customer_id"
+    ],
+    "clustering_column": [
+        "last_purchase_date",
+        "customer_segment"
+    ],
+    "partitioning_column": [
+        "registration_date"
+    ],
+    "type": "Type 2 Dimension Table",
+    "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "first_name",
+            "description": "Customer's first name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "last_name",
+            "description": "Customer's last name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "email_address",
+            "description": "Customer's email address",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "phone_number",
+            "description": "Customer's contact number",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "registration_date",
+            "description": "Date when customer registered",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "last_purchase_date",
+            "description": "Date of last purchase made",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "customer_segment",
+            "description": "Segmentation type based on behavior",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "VIP",
+                "Regular",
+                "Occasional"
+            ],
+            "dimension_group": "customer_behavior_segment_dimension_group"
+        },
+        {
+            "name": "total_spent",
+            "description": "Total amount spent by customer",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "average_order_value",
+            "description": "Average value of orders placed",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "number_of_orders",
+            "description": "Total number of orders placed",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "last_order_amount",
+            "description": "Amount of the most recent order",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "preferred_payment_method",
+            "description": "Preferred method of payment",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Credit Card",
+                "Debit Card",
+                "PayPal",
+                "Bank Transfer"
+            ],
+            "dimension_group": "payment_method_dimension_group"
+        },
+        {
+            "name": "preferred_delivery_mode",
+            "description": "Preferred delivery method",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Standard",
+                "Express",
+                "Overnight"
+            ],
+            "dimension_group": ""
+        },
+        {
+            "name": "address",
+            "description": "Customer's physical address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the customer's address",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "state",
+            "description": "State of the customer's address",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "zip_code",
+            "description": "Postal code of the customer's address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the customer's address",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "birthdate",
+            "description": "Customer's date of birth",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "gender",
+            "description": "Gender of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "marital_status",
+            "description": "Marital status of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Single",
+                "Married",
+                "Divorced",
+                "Widowed"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "device_used",
+            "description": "Primary device used for shopping",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Desktop",
+                "Laptop",
+                "Tablet",
+                "Smartphone"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "operating_system",
+            "description": "Operating system of the device",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Windows",
+                "macOS",
+                "Linux",
+                "Android",
+                "iOS"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "interests",
+            "description": "Interests and hobbies of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "content_dimension_group"
+        }
+    ]
+}

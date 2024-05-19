@@ -1,0 +1,184 @@
+{
+    "name": "wishlist_0",
+    "description": "Tracks customer product preferences and behavior",
+    "primary_key_column": [
+        "customer_id",
+        "product_id"
+    ],
+    "clustering_column": [
+        "customer_id",
+        "product_id"
+    ],
+    "partitioning_column": [
+        "date_added"
+    ],
+    "type": "Type 1 Fact Table",
+    "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for a customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "product_id",
+            "description": "Unique identifier for a product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "date_added",
+            "description": "Date product was added to wishlist",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "last_updated",
+            "description": "Last update timestamp for wishlist entry",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "product_category",
+            "description": "Category of the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "priority",
+            "description": "Priority level of the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "high",
+                "medium",
+                "low"
+            ],
+            "dimension_group": ""
+        },
+        {
+            "name": "price",
+            "description": "Current price of the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "quantity",
+            "description": "Desired quantity of the product",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "device_used",
+            "description": "Device used to add to wishlist",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "desktop",
+                "mobile",
+                "tablet"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "app_version",
+            "description": "App version used during addition",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "os_type",
+            "description": "Operating system of the device",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "android",
+                "ios",
+                "windows",
+                "mac"
+            ],
+            "dimension_group": "device_dimension_group"
+        },
+        {
+            "name": "interest_level",
+            "description": "Interest level in the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "high",
+                "medium",
+                "low"
+            ],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "notification_enabled",
+            "description": "Is notification for updates enabled",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "behavior_dimension_group"
+        },
+        {
+            "name": "comments",
+            "description": "Customer comments on the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "content_dimension_group"
+        },
+        {
+            "name": "psychographic_segment",
+            "description": "Psychographic segment of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "value_seeker",
+                "brand_oriented",
+                "quality_focused",
+                "impulse_buyer"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "behavioral_score",
+            "description": "Behavioral score based on past activity",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        }
+    ]
+}

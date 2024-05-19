@@ -1,0 +1,212 @@
+{
+    "name": "loyalty_program_1",
+    "description": "Tracks customer loyalty program participation",
+    "primary_key_column": [
+        "customer_id",
+        "program_id"
+    ],
+    "clustering_column": [
+        "enrollment_date",
+        "last_activity_date"
+    ],
+    "partitioning_column": [
+        "enrollment_date"
+    ],
+    "type": "Type 2 Dimension Table",
+    "columns": [
+        {
+            "name": "customer_id",
+            "description": "Unique identifier for a customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "program_id",
+            "description": "Unique identifier for the loyalty program",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "enrollment_date",
+            "description": "Date customer joined the program",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "last_activity_date",
+            "description": "Date of last program activity",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "points_earned",
+            "description": "Total loyalty points earned",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "points_redeemed",
+            "description": "Total loyalty points redeemed",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "current_points",
+            "description": "Current balance of loyalty points",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "tier_level",
+            "description": "Current tier level in the program",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [
+                "Bronze",
+                "Silver",
+                "Gold",
+                "Platinum"
+            ],
+            "dimension_group": "loyalty_dimension_group"
+        },
+        {
+            "name": "first_name",
+            "description": "Customer's first name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "last_name",
+            "description": "Customer's last name",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "email",
+            "description": "Customer's email address",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "phone_number",
+            "description": "Customer's phone number",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "birthdate",
+            "description": "Customer's date of birth",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "gender",
+            "description": "Customer's gender",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "address",
+            "description": "Customer's residential address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "city",
+            "description": "City of the customer's address",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "state",
+            "description": "State of the customer's address",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "zip_code",
+            "description": "Postal code of the customer's address",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "country",
+            "description": "Country of the customer's address",
+            "data_type": "STRING",
+            "format": "UpperCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "registration_channel",
+            "description": "Channel through which registered",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [
+                "Online",
+                "InStore",
+                "App",
+                "Other"
+            ],
+            "dimension_group": "channel_dimension_group"
+        }
+    ]
+}

@@ -1,0 +1,261 @@
+{
+    "name": "product_sales",
+    "description": "Records daily sales of products",
+    "primary_key_column": [
+        "product_id",
+        "sale_date"
+    ],
+    "clustering_column": [
+        "product_category",
+        "sale_region"
+    ],
+    "partitioning_column": [
+        "sale_date"
+    ],
+    "type": "Type 1 Fact Table",
+    "columns": [
+        {
+            "name": "product_id",
+            "description": "Unique identifier for a product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "sale_date",
+            "description": "Date of the product sale",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "product_name",
+            "description": "Name of the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "product_category",
+            "description": "Category of the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "sale_region",
+            "description": "Region where sale occurred",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "geographic_dimension_group"
+        },
+        {
+            "name": "units_sold",
+            "description": "Number of units sold",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "sale_price_per_unit",
+            "description": "Sale price of each unit",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "total_sale_amount",
+            "description": "Total amount from the sale",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "discount_applied",
+            "description": "Discount applied on the sale",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "payment_method",
+            "description": "Method of payment used",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "Credit Card",
+                "Debit Card",
+                "Cash",
+                "Online Payment"
+            ],
+            "dimension_group": "payment_method_dimension_group"
+        },
+        {
+            "name": "customer_id",
+            "description": "Identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": [],
+            "dimension_group": "customer_dimension_group"
+        },
+        {
+            "name": "sales_rep_id",
+            "description": "Identifier for the sales representative",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "order_id",
+            "description": "Unique identifier for the order",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "shipping_cost",
+            "description": "Cost of shipping the product",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "delivery_time_days",
+            "description": "Delivery time in days",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        },
+        {
+            "name": "product_weight",
+            "description": "Weight of the product in kg",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "product_dimensions",
+            "description": "Dimensions of the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "manufacturer",
+            "description": "Product manufacturer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "brand",
+            "description": "Brand of the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "stock_level",
+            "description": "Current stock level of the product",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "inventory_dimension_group"
+        },
+        {
+            "name": "reorder_level",
+            "description": "Reorder level of the product",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "inventory_dimension_group"
+        },
+        {
+            "name": "return_policy",
+            "description": "Return policy applicable",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "No Returns",
+                "30 Days Return",
+                "90 Days Return"
+            ],
+            "dimension_group": ""
+        },
+        {
+            "name": "warranty_period",
+            "description": "Warranty period in months",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "customer_rating",
+            "description": "Average customer rating",
+            "data_type": "FLOAT",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "review_count",
+            "description": "Number of reviews received",
+            "data_type": "INTEGER",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_review_dimension_group"
+        },
+        {
+            "name": "last_stock_update",
+            "description": "Last date when stock was updated",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "time_dimension_group"
+        }
+    ]
+}

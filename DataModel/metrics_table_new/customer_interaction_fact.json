@@ -1,0 +1,200 @@
+{
+    "name": "customer_interaction_fact",
+    "description": "Tracks all customer interactions with products",
+    "primary_key_column": [
+        "interaction_id"
+    ],
+    "clustering_column": [
+        "customer_id",
+        "product_id"
+    ],
+    "partitioning_column": [
+        "interaction_date"
+    ],
+    "type": "Fact Table",
+    "Columns": [
+        {
+            "name": "interaction_id",
+            "description": "Unique identifier for the interaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "customer_id",
+            "description": "Identifier for the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "Y",
+            "enum": []
+        },
+        {
+            "name": "product_id",
+            "description": "Identifier for the product",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "interaction_type",
+            "description": "Type of interaction (e.g., view, click)",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "view",
+                "click",
+                "purchase",
+                "return"
+            ]
+        },
+        {
+            "name": "interaction_date",
+            "description": "Date of the interaction",
+            "data_type": "DATE",
+            "format": "YYYY-MM-DD",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "interaction_time",
+            "description": "Time of the interaction",
+            "data_type": "TIME",
+            "format": "HH:MM:SS",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "channel",
+            "description": "Channel of interaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "online",
+                "in-store",
+                "mobile",
+                "email"
+            ]
+        },
+        {
+            "name": "device_type",
+            "description": "Type of device used",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "desktop",
+                "mobile",
+                "tablet",
+                "other"
+            ]
+        },
+        {
+            "name": "browser",
+            "description": "Browser used for the interaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "os",
+            "description": "Operating system of the device",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "country",
+            "description": "Country of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "region",
+            "description": "Region of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "city",
+            "description": "City of the customer",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "session_id",
+            "description": "Session identifier for the interaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "referrer",
+            "description": "Referrer URL for the interaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "campaign_id",
+            "description": "Marketing campaign identifier",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "page_viewed",
+            "description": "Page viewed during the interaction",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "entry_page",
+            "description": "Entry page for the session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "exit_page",
+            "description": "Exit page for the session",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "time_spent",
+            "description": "Time spent during interaction in seconds",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        },
+        {
+            "name": "conversion",
+            "description": "Whether the interaction led to a conversion",
+            "data_type": "BOOLEAN",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": []
+        }
+    ]
+}

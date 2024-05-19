@@ -1,0 +1,226 @@
+{
+  "name": "website_performance_fact",
+  "description": "Tracks daily website performance metrics",
+  "primary_key_column": [
+    "date",
+    "page_id"
+  ],
+  "clustering_column": [
+    "date",
+    "page_id"
+  ],
+  "partitioning_column": [
+    "date"
+  ],
+  "type": "Type 1 Fact Table",
+  "Columns": [
+    {
+      "name": "date",
+      "description": "The date of data collection",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "page_id",
+      "description": "Unique identifier for a webpage",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "user_sessions",
+      "description": "Total number of user sessions",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "page_views",
+      "description": "Total page views",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "unique_visitors",
+      "description": "Number of unique visitors",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "bounce_rate",
+      "description": "Percentage of visitors who leave",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "average_time_on_page",
+      "description": "Average time spent on page in seconds",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "conversion_rate",
+      "description": "Percentage of conversions",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "exit_rate",
+      "description": "Percentage of exits from this page",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "new_visitors",
+      "description": "Number of new visitors",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "returning_visitors",
+      "description": "Number of returning visitors",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "page_load_time",
+      "description": "Time taken to load the page",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "server_response_time",
+      "description": "Server response time in milliseconds",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "errors_per_day",
+      "description": "Number of errors occurred per day",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "error_rate",
+      "description": "Error rate as a percentage",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "ad_clicks",
+      "description": "Number of advertisement clicks",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "ad_impressions",
+      "description": "Number of ad impressions",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "cost_per_click",
+      "description": "Cost per advertisement click",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "revenue_per_visit",
+      "description": "Revenue generated per visit",
+      "data_type": "FLOAT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "search_engine_traffic",
+      "description": "Traffic coming from search engines",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "social_media_traffic",
+      "description": "Traffic coming from social media",
+      "data_type": "INT64",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "landing_page",
+      "description": "First page visited during the session",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "exit_page",
+      "description": "Last page visited during the session",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "bounce_status",
+      "description": "Whether the session was a bounce (single page visit)",
+      "data_type": "BOOLEAN",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "conversion_event",
+      "description": "Event that indicates a conversion was made",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "referral_source",
+      "description": "Source from which the visitor was referred",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+    "name": "product_category_hierarchy",
+    "description": "Hierarchy of product categories in e-commerce",
+    "primary_key_column": [
+        "category_id"
+    ],
+    "clustering_column": [
+        "parent_category_id",
+        "category_name"
+    ],
+    "partitioning_column": [
+        "last_updated"
+    ],
+    "type": "Dimension Table",
+    "columns": [
+        {
+            "name": "category_id",
+            "description": "Unique identifier for the category",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "category_name",
+            "description": "Name of the product category",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "parent_category_id",
+            "description": "Identifier for parent category",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "category_level",
+            "description": "Level of category in hierarchy",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "is_active",
+            "description": "Status if category is active",
+            "data_type": "BOOL",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [
+                "true",
+                "false"
+            ],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "description",
+            "description": "Detailed description of category",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "image_url",
+            "description": "URL of category image",
+            "data_type": "STRING",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "created_at",
+            "description": "Timestamp category was created",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "last_updated",
+            "description": "Timestamp category last updated",
+            "data_type": "TIMESTAMP",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": ""
+        },
+        {
+            "name": "seo_title",
+            "description": "SEO title for the category",
+            "data_type": "STRING",
+            "format": "CamelCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "seo_description",
+            "description": "SEO description for the category",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "seo_keywords",
+            "description": "SEO keywords for the category",
+            "data_type": "STRING",
+            "format": "LowerCase",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "category_dimension_group"
+        },
+        {
+            "name": "number_of_products",
+            "description": "Count of products in category",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "average_product_rating",
+            "description": "Average rating of products in category",
+            "data_type": "FLOAT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "featured_product_id",
+            "description": "Featured product for the category",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "product_dimension_group"
+        },
+        {
+            "name": "sales_volume",
+            "description": "Total sales volume for the category",
+            "data_type": "FLOAT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "discount_percentage",
+            "description": "Average discount percentage in category",
+            "data_type": "FLOAT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "revenue",
+            "description": "Total revenue generated from category",
+            "data_type": "FLOAT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "margin",
+            "description": "Profit margin for the category",
+            "data_type": "FLOAT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        },
+        {
+            "name": "inventory_level",
+            "description": "Current inventory level of category",
+            "data_type": "INT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "inventory_dimension_group"
+        },
+        {
+            "name": "return_rate",
+            "description": "Return rate for products in category",
+            "data_type": "FLOAT64",
+            "format": "",
+            "is_pii_column": "N",
+            "enum": [],
+            "dimension_group": "transaction_dimension_group"
+        }
+    ]
+}

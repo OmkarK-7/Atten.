@@ -1,0 +1,245 @@
+{
+  "name": "marketing_fact",
+  "description": "Stores detailed marketing transaction data",
+  "primary_key_column": [
+    "transaction_id",
+    "transaction_date"
+  ],
+  "clustering_column": [
+    "customer_id",
+    "product_id"
+  ],
+  "partitioning_column": [
+    "transaction_date"
+  ],
+  "type": "Type 1 Fact Table",
+  "columns": [
+    {
+      "name": "transaction_id",
+      "description": "Unique identifier for transactions",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "transaction_date",
+      "description": "Date of the transaction",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "customer_id",
+      "description": "Identifier for the customer",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "product_id",
+      "description": "Identifier for the product",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "quantity",
+      "description": "Quantity of product purchased",
+      "data_type": "INTEGER",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "unit_price",
+      "description": "Price per unit of the product",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "total_amount",
+      "description": "Total amount of the transaction",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "payment_type",
+      "description": "Method of payment used",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "CREDIT",
+        "DEBIT",
+        "CASH",
+        "CHECK",
+        "ONLINE"
+      ]
+    },
+    {
+      "name": "campaign_id",
+      "description": "Marketing campaign identifier",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "channel_id",
+      "description": "Channel through which sold",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "store_id",
+      "description": "Store identifier where transaction occurred",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "region",
+      "description": "Region where the transaction took place",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "country",
+      "description": "Country of the transaction",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "sales_rep_id",
+      "description": "Sales representative ID",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "discount_applied",
+      "description": "Discount applied on the transaction",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "coupon_code",
+      "description": "Coupon code used for the transaction",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "is_first_time_buyer",
+      "description": "Indicates if customer is a first-time buyer",
+      "data_type": "BOOLEAN",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "customer_segment",
+      "description": "Segmentation type of the customer",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "PREMIUM",
+        "STANDARD",
+        "BUDGET"
+      ]
+    },
+    {
+      "name": "product_category",
+      "description": "Category of the product",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "product_sub_category",
+      "description": "Sub-category of the product",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "return_flag",
+      "description": "Flag if the product was returned",
+      "data_type": "BOOLEAN",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "return_reason",
+      "description": "Reason for product return",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "shipping_cost",
+      "description": "Shipping cost for the transaction",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    },
+    {
+      "name": "delivery_status",
+      "description": "Status of the product delivery",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "DELIVERED",
+        "PENDING",
+        "CANCELLED",
+        "RETURNED"
+      ]
+    },
+    {
+      "name": "order_priority",
+      "description": "Priority level of the order",
+      "data_type": "STRING",
+      "format": "UpperCase",
+      "is_pii_column": "N",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    {
+      "name": "referral_rate",
+      "type": "FLOAT",
+      "description": "Rate at which referred customers make a purchase",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": []
+    }
+  ]
+}

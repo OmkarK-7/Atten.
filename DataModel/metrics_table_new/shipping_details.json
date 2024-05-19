@@ -1,0 +1,243 @@
+{
+  "name": "shipping_details",
+  "description": "Stores detailed shipping information for orders",
+  "primary_key_column": [
+    "order_id",
+    "shipment_id"
+  ],
+  "clustering_column": [
+    "shipment_date",
+    "delivery_date"
+  ],
+  "partitioning_column": [
+    "shipment_date"
+  ],
+  "type": "Type 1 Fact Table",
+  "columns": [
+    {
+      "name": "order_id",
+      "description": "Unique identifier for the order",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": ""
+    },
+    {
+      "name": "shipment_id",
+      "description": "Unique identifier for the shipment",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": ""
+    },
+    {
+      "name": "shipment_date",
+      "description": "Date when shipment was dispatched",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "time_dimension_group"
+    },
+    {
+      "name": "delivery_date",
+      "description": "Expected date of delivery",
+      "data_type": "DATE",
+      "format": "YYYY-MM-DD",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "time_dimension_group"
+    },
+    {
+      "name": "carrier",
+      "description": "Carrier handling the shipment",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": ""
+    },
+    {
+      "name": "tracking_number",
+      "description": "Tracking number provided by carrier",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": ""
+    },
+    {
+      "name": "shipment_status",
+      "description": "Current status of the shipment",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [
+        "pending",
+        "shipped",
+        "delivered",
+        "returned"
+      ],
+      "dimension_group": "transaction_dimension_group"
+    },
+    {
+      "name": "shipment_cost",
+      "description": "Cost associated with the shipment",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "transaction_dimension_group"
+    },
+    {
+      "name": "shipment_type",
+      "description": "Type of shipment",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [
+        "standard",
+        "express",
+        "overnight"
+      ],
+      "dimension_group": "transaction_dimension_group"
+    },
+    {
+      "name": "weight",
+      "description": "Weight of the shipment in kg",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "transaction_dimension_group"
+    },
+    {
+      "name": "volume",
+      "description": "Volume of the shipment in cubic meters",
+      "data_type": "FLOAT",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "transaction_dimension_group"
+    },
+    {
+      "name": "number_of_items",
+      "description": "Number of items in the shipment",
+      "data_type": "INTEGER",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "transaction_dimension_group"
+    },
+    {
+      "name": "origin_country",
+      "description": "Country from which shipment originates",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "geographic_dimension_group"
+    },
+    {
+      "name": "destination_country",
+      "description": "Country where shipment is delivered",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "geographic_dimension_group"
+    },
+    {
+      "name": "origin_zip_code",
+      "description": "Zip code of origin location",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "geographic_dimension_group"
+    },
+    {
+      "name": "destination_zip_code",
+      "description": "Zip code of destination location",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": "geographic_dimension_group"
+    },
+    {
+      "name": "sender_name",
+      "description": "Name of the sender",
+      "data_type": "STRING",
+      "format": "CamelCase",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "receiver_name",
+      "description": "Name of the receiver",
+      "data_type": "STRING",
+      "format": "CamelCase",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "sender_address",
+      "description": "Address of the sender",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "receiver_address",
+      "description": "Address of the receiver",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "sender_contact",
+      "description": "Contact number of the sender",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "receiver_contact",
+      "description": "Contact number of the receiver",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "Y",
+      "enum": [],
+      "dimension_group": "customer_dimension_group"
+    },
+    {
+      "name": "shipment_notes",
+      "description": "Additional notes about the shipment",
+      "data_type": "STRING",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": ""
+    },
+    {
+      "name": "return_rate",
+      "type": "FLOAT",
+      "description": "Rate of returns against orders shipped",
+      "format": "",
+      "is_pii_column": "N",
+      "enum": [],
+      "dimension_group": ""
+    }
+  ]
+}
